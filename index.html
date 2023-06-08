@@ -12,8 +12,16 @@
         />
         <!-- Stylesheet -->
         <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="style.css" />
       </head>
+
+      <script>
+        function playSound(audioName) {
+          let audio = new Audio(audioName);
+          audio.play();
+          }
+
+          playSound('audio/backsound.mp3')
+      </script>
 <body>
     <video autoplay muted loop id="myVideo">
         <source src="img/vid.mp4" type="video/mp4">
@@ -35,26 +43,42 @@
             text-align: center;
             padding: 10px;
             ">
-                    <button onclick="login()" style="width: 170px; height: 40px; background-color: #7fe757; border: 2px solid black; border-radius: 10px;" type="submit" class="btn btn-warning center"><b>LOGIN</b></button>
+            <button onclick="login()" style="width: 170px; height: 40px; background-color: #7fe757; border: 2px solid black; border-radius: 10px;" type="submit" class="btn btn-warning center"><b>LOGIN</b></button>
             </div>
           </form>
       </div>
-      <audio style="display: none;" src="audio//backsound.mp3" autoplay></audio>
+      
 </body>
 
 
 <script>
-    
-    function login() {
+    // github IO
+    // function login() {
+    //     const user = document.getElementById('userName').value;
+    //     const password = document.getElementById('password').value;
+    //     const win = window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
+    //     if(user === user && password === '12345'){
+    //         alert('Login Berhasil')
+    //         window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
+    //     }else{
+    //         alert('Password yang anda masukan salah !')
+    //         window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/index.html'
+    //     }
+    //    localStorage.setItem('username', user)
+    //    localStorage.setItem('score', 0)
+    // }
+
+//Local http://127.0.0.1:5501/index.html
+ function login() {
         const user = document.getElementById('userName').value;
         const password = document.getElementById('password').value;
-        const win = window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
+        const win = window.location.href = 'http://127.0.0.1:5501/home.html'
         if(user === user && password === '12345'){
             alert('Login Berhasil')
-            window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
+            window.location.href = 'http://127.0.0.1:5501/home.html'
         }else{
             alert('Password yang anda masukan salah !')
-            window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/index.html'
+            window.location.href = 'http://127.0.0.1:5501/index.html'
         }
        localStorage.setItem('username', user)
        localStorage.setItem('score', 0)
