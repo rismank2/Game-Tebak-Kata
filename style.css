@@ -163,3 +163,18 @@
   #result-text p{
     margin: 10px;
   }
+
+  .container-login{
+    font-size: 16px;
+    background-color: #5F9EA0;
+   
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    padding: 3em;
+    border-radius: 0.6em;
+    box-shadow: 0 1.2em 2.4em rgba(27, 23, 13, 0.25);
+  }
