@@ -252,7 +252,7 @@ const initializer = () => {
             dashes[index].innerText = char;
             //increment counter
             winCount += 1;
-            console.log(winCount);
+            // console.log(winCount);
             //if winCount equals word lenfth
             if (winCount == charArray.length) {
               resultText.innerHTML = `
@@ -270,7 +270,7 @@ const initializer = () => {
         //for drawing man
         drawMan(count);
         //Count==6 because head,body,left arm, right arm,left leg,right leg
-        console.log(count);
+        // console.log(count);
         if (count == 6) {
           resultText.innerHTML = `
           <img src="img/lose.gif" alt="">
