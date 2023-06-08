@@ -48,13 +48,13 @@
     function login() {
         const user = document.getElementById('userName').value;
         const password = document.getElementById('password').value;
-        const win = window.location.href = 'http://127.0.0.1:5501/home.html'
+        const win = window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
         if(user === user && password === '12345'){
             alert('Login Berhasil')
-            window.location.href = 'http://127.0.0.1:5501/home.html'
+            window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
         }else{
             alert('Password yang anda masukan salah !')
-            window.location.href = 'http://127.0.0.1:5501/login.html'
+            window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/index.html'
         }
        localStorage.setItem('username', user)
        localStorage.setItem('score', 0)
