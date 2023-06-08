@@ -7,16 +7,17 @@
   body {
     background-color: #8c52ff;
   }
-  html { 
-    background: url(img/bg.jpg) no-repeat center center fixed; 
+  /* html { 
+    background: url(img/word.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+    background-size: 100%;
+  } */
   .container {
     font-size: 16px;
-    background-color: #ffffff;
+    background-color: #5F9EA0;
     width: 90vw;
     max-width: 34em;
     position: absolute;
@@ -25,7 +26,7 @@
     left: 50%;
     padding: 3em;
     border-radius: 0.6em;
-    box-shadow: 0 1.2em 2.4em rgba(111, 85, 0, 0.25);
+    box-shadow: 0 1.2em 2.4em rgba(27, 23, 13, 0.25);
   }
   #options-container {
     text-align: center;
@@ -49,11 +50,12 @@
     border: 3px solid #808080;
     color: #808080;
     background-color: #efefef;
+    border-radius: 5px;
   }
   #options-container button.active {
-    background-color: #8c52ff;
+    background-color: #f1b963; 
     border: 3px solid #000000;
-    color: #fff;
+    color: black;
   }
   .letter-container {
     width: 100%;
@@ -87,12 +89,13 @@
     display: flex;
     justify-content: center;
     font-size: 1.8em;
-    margin: 0.6em 0 1.2em 0;
+    /* margin: 0.6em 0 1.2em 0; */
+    margin-top: 10px;
   }
   canvas {
     display: block;
     margin: auto;
-    border: 10px solid #8c52ff;
+    border: 10px solid whitesmoke;
     border-radius: 10px;
   }
   .hide {
@@ -105,6 +108,7 @@
   #result-text p {
     font-size: 1.25em;
     margin: 1em 0 2em 0;
+    text-align: center;
   }
   #result-text span {
     font-weight: 600;
@@ -112,7 +116,7 @@
   #new-game-button {
     font-size: 1.25em;
     padding: 0.5em 1em;
-    background-color: #8c52ff;
+    background-color: #f1b963;
     border: 3px solid #000000;
     color: #fff;
     border-radius: 0.2em;
@@ -130,4 +134,32 @@
   margin-bottom: 10px;
   margin-top: 0px;
   }
+
+  #confetti{
+    background: white;
+    height: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+  }
+
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .score{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fe5152;
+    
+  }
   
+  #result-text p{
+    margin: 10px;
+  }
