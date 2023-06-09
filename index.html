@@ -34,17 +34,36 @@
               <label for="exampleInputEmail1" class="form-label"><b>User Name :</b></label>
               <input style="border: 2px solid black; border-radius: 10px; height: 45px;" type="text" class="form-control" id="userName" autocomplete="off">
             </div>
-            <div class="mb-3" style="margin-top: 20px;">
-              <label for="exampleInputPassword1" class="form-label"><b>Password :</b></label>
-              <input style="border: 2px solid black; border-radius: 10px; height: 45px;" type="password" class="form-control" id="password">
+            
+            <div class="row">
+              <div class="col-5">
+                <div class="mb-3" style="margin-top: 20px;">
+                  <label class="form-label"><b>Captch :</b></label>
+                  <input style="border: 2px solid black; border-radius: 10px; height: 45px;" type="text" class="form-control" id="captcha" readonly>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="mb-2" style="margin-top: 20px;">
+                  <input style="border: 2px solid black; border-radius: 10px; height: 45px; margin-top: 52px; background-color: #fe5152;" type="button" class="form-control" id="captcha" onclick="generateCaptcha()">
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="mb-3" style="margin-top: 20px;">
+                  <label for="exampleInputPassword1" class="form-label"><b>Input Captcha :</b></label>
+                  <input style="border: 2px solid black; border-radius: 10px; height: 45px;" type="text" class="form-control" id="password" autocomplete="off">
+                </div>
+              </div>
             </div>
+            <p style="text-align: center;">(*press button pink for create captcha)</p>
+
             <div style="
-            margin-top: 35px;
+            margin-top: 20px;
             text-align: center;
             padding: 10px;
             ">
             <button onclick="login()" style="width: 170px; height: 40px; background-color: #7fe757; border: 2px solid black; border-radius: 10px;" type="submit" class="btn btn-warning center"><b>LOGIN</b></button>
             </div>
+            
           </form>
       </div>
       
@@ -52,36 +71,51 @@
 
 
 <script>
-    // github IO
-    // function login() {
-    //     const user = document.getElementById('userName').value;
-    //     const password = document.getElementById('password').value;
-    //     const win = window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
-    //     if(user === user && password === '12345'){
-    //         alert('Login Berhasil')
-    //         window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
-    //     }else{
-    //         alert('Password yang anda masukan salah !')
-    //         window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/index.html'
-    //     }
-    //    localStorage.setItem('username', user)
-    //    localStorage.setItem('score', 0)
-    // }
+    //Captcha
+    function generateCaptcha(){
+             var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9');
+             var i;
+             for (i=0;i<4;i++){
+               var a = alpha[Math.floor(Math.random() * alpha.length)];
+               var b = alpha[Math.floor(Math.random() * alpha.length)];
+               var c = alpha[Math.floor(Math.random() * alpha.length)];
+               var d = alpha[Math.floor(Math.random() * alpha.length)];
+               var e = alpha[Math.floor(Math.random() * alpha.length)];
+              }
+            var code = a + '' + b + '' + '' + c + '' + d + '' + e;
+            document.getElementById('captcha').value = code
+          }
 
-//Local http://127.0.0.1:5501/index.html
- function login() {
+    // github IO
+    function login() {
         const user = document.getElementById('userName').value;
         const password = document.getElementById('password').value;
-        const win = window.location.href = 'http://127.0.0.1:5501/home.html'
-        if(user === user && password === '12345'){
+        const cap = document.getElementById('captcha').value;
+        const win = window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
+        if(password === cap){
             alert('Login Berhasil')
-            window.location.href = 'http://127.0.0.1:5501/home.html'
+            window.location.href = 'https://rismank2.github.io/Game-Tebak-Kata/home.html'
         }else{
-            alert('Password yang anda masukan salah !')
-            window.location.href = 'http://127.0.0.1:5501/index.html'
+            alert('Captcha yang anda masukan salah !')
+           window.location.replace = 'https://rismank2.github.io/Game-Tebak-Kata/index.html'
         }
        localStorage.setItem('username', user)
-       localStorage.setItem('score', 0)
     }
+
+//Local http://127.0.0.1:5501/index.html
+//  function login() {
+    //     const user = document.getElementById('userName').value;
+    //     const password = document.getElementById('password').value;
+    //     const cap = document.getElementById('captcha').value;
+    //     const win = window.location.href = 'http://127.0.0.1:5501/home.html'
+    //     if(password === cap){
+    //         alert('Login Berhasil')
+    //         window.location.href = 'http://127.0.0.1:5501/home.html'
+    //     }else{
+    //         alert('Captcha yang anda masukan salah !')
+    //         window.location.replace('index.html')
+    //     }
+    //    localStorage.setItem('username', user)
+    // }
 </script>
 </html>

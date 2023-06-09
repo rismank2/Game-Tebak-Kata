@@ -59,13 +59,13 @@ let options = {
 //count
 let winCount = 0;
 let count = 0;
-
+let poins = 0;
 let chosenWord = "";
 
 //Display option buttons
 const displayOptions = () => {
   optionsContainer.innerHTML += `<h3>SILAHKAN PILIH KATA YANG INGIN DITEBAK!</h3>
-  <h4>Player : ${userName} | Score : ${score}</h4>
+  <h4>Player : ${userName} | Score : ${poins}</h4>
   `;
   let buttonCon = document.createElement("div");
   for (let value in options) {
@@ -262,7 +262,6 @@ const initializer = () => {
       let parse = (count / chosenWord.length) * 100;
       let total = 100 - parse;
       score = Math.ceil(total);
-
       //if array contains clciked value replace the matched dash with letter else dram on canvas
       if (charArray.includes(button.innerText)) {
         charArray.forEach((char, index) => {
@@ -305,13 +304,15 @@ const initializer = () => {
           blocker();
         }
       }
+
       // console.log(count + "==" + chosenWord.length);
       //disable clicked button
       button.disabled = true;
     });
+
     letterContainer.append(button);
   }
-
+  poins += score;
   displayOptions();
   //Call to canvasCreator (for clearing previous canvas and creating initial canvas)
   let { initialDrawing } = canvasCreator();
